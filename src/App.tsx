@@ -59,6 +59,8 @@ function App() {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <link rel="canonical" href={`https://books.is${showReadingList ? '/reading-list' : ''}`} />
+        <meta property="og:image" content="https://books.is/vite.svg" />
+        <meta property="twitter:image" content="https://books.is/vite.svg" />
         {selectedBook && (
           <>
             <title>{`${selectedBook.ItemInfo.Title.DisplayValue} | Book Discovery | books.is`}</title>
@@ -67,21 +69,22 @@ function App() {
             <meta property="og:title" content={`${selectedBook.ItemInfo.Title.DisplayValue} | Book Discovery | books.is`} />
             <meta property="og:description" content={selectedBook.ItemInfo.Description || 'Discover more about this book on books.is - your ultimate book discovery platform.'} />
             <link rel="canonical" href={`https://books.is/book/${selectedBook.ASIN}`} />
-            {selectedBook.Images?.Primary?.Large?.URL && (
-              <meta property="og:image" content={selectedBook.Images.Primary.Large.URL} />
-            )}
             <script type="application/ld+json">
               {JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "Book",
                 "name": selectedBook.ItemInfo.Title.DisplayValue,
                 "description": selectedBook.ItemInfo.Description,
-                "image": selectedBook.Images?.Primary?.Large?.URL,
+                "image": selectedBook.Images?.Primary?.Large?.URL || "https://books.is/vite.svg",
                 "url": `https://books.is/book/${selectedBook.ASIN}`,
                 "publisher": {
                   "@type": "Organization",
                   "name": "books.is",
-                  "url": "https://books.is"
+                  "url": "https://books.is",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://books.is/vite.svg"
+                  }
                 }
               })}
             </script>
@@ -95,8 +98,9 @@ function App() {
             <div className="flex flex-col sm:flex-row gap-6 items-center justify-between">
               <button 
                 onClick={resetView}
-                className="text-2xl font-normal tracking-tight text-neutral-900 hover:text-neutral-600 transition-colors"
+                className="text-2xl font-normal tracking-tight text-neutral-900 hover:text-neutral-600 transition-colors flex items-center gap-3"
               >
+                <img src="/vite.svg" alt="Book Discovery Logo" className="w-8 h-8" />
                 <h1>Book Discovery</h1>
               </button>
               <div className="flex items-center gap-6">

@@ -11,19 +11,29 @@
     <meta name="description" content="Discover trending books, create reading lists, and explore curated recommendations. Your personal book discovery platform for finding your next favorite read." />
     <meta name="keywords" content="book discovery, reading list, book recommendations, trending books, best books, book finder, reading tracker, book reviews, books.is" />
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" href="/vite.svg" />
+    <link rel="mask-icon" href="/vite.svg" color="#000000" />
+    <meta name="theme-color" content="#ffffff" />
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://books.is" />
     <meta property="og:title" content="Book Discovery | Find Your Next Great Read | books.is" />
     <meta property="og:description" content="Discover trending books, create reading lists, and explore curated recommendations. Your personal book discovery platform for finding your next favorite read." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=1200&h=630" />
+    <meta property="og:image" content="https://books.is/vite.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="books.is" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://books.is" />
     <meta property="twitter:title" content="Book Discovery | Find Your Next Great Read | books.is" />
     <meta property="twitter:description" content="Discover trending books, create reading lists, and explore curated recommendations. Your personal book discovery platform for finding your next favorite read." />
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=1200&h=630" />
+    <meta property="twitter:image" content="https://books.is/vite.svg" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://books.is" />
@@ -32,6 +42,12 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="author" content="books.is" />
     <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+    
+    <!-- PWA Tags -->
+    <meta name="application-name" content="Book Discovery" />
+    <meta name="apple-mobile-web-app-title" content="Book Discovery" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -43,10 +59,18 @@
         "url": "https://books.is",
         "applicationCategory": "Books & Literature",
         "operatingSystem": "Web Browser",
+        "image": "https://books.is/vite.svg",
+        "screenshot": "https://books.is/vite.svg",
         "publisher": {
           "@type": "Organization",
           "name": "books.is",
-          "url": "https://books.is"
+          "url": "https://books.is",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://books.is/vite.svg",
+            "width": "512",
+            "height": "512"
+          }
         },
         "offers": {
           "@type": "Offer",
