@@ -59,8 +59,8 @@ function App() {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <link rel="canonical" href={`https://books.is${showReadingList ? '/reading-list' : ''}`} />
-        <meta property="og:image" content="https://books.is/vite.svg" />
-        <meta property="twitter:image" content="https://books.is/vite.svg" />
+        <meta property="og:image" content="https://books.is/logo.svg" />
+        <meta property="twitter:image" content="https://books.is/logo.svg" />
         {selectedBook && (
           <>
             <title>{`${selectedBook.ItemInfo.Title.DisplayValue} | Book Discovery | books.is`}</title>
@@ -75,7 +75,7 @@ function App() {
                 "@type": "Book",
                 "name": selectedBook.ItemInfo.Title.DisplayValue,
                 "description": selectedBook.ItemInfo.Description,
-                "image": selectedBook.Images?.Primary?.Large?.URL || "https://books.is/vite.svg",
+                "image": selectedBook.Images?.Primary?.Large?.URL || "https://books.is/logo.svg",
                 "url": `https://books.is/book/${selectedBook.ASIN}`,
                 "publisher": {
                   "@type": "Organization",
@@ -83,7 +83,7 @@ function App() {
                   "url": "https://books.is",
                   "logo": {
                     "@type": "ImageObject",
-                    "url": "https://books.is/vite.svg"
+                    "url": "https://books.is/logo.svg"
                   }
                 }
               })}
@@ -100,7 +100,7 @@ function App() {
                 onClick={resetView}
                 className="text-2xl font-normal tracking-tight text-neutral-900 hover:text-neutral-600 transition-colors flex items-center gap-3"
               >
-                <img src="/vite.svg" alt="Book Discovery Logo" className="w-8 h-8" />
+                <img src="/logo.svg" alt="Book Discovery Logo" className="w-8 h-8" />
                 <h1>Book Discovery</h1>
               </button>
               <div className="flex items-center gap-6">
